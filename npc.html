@@ -22,8 +22,8 @@
                     id="chevron">
                 <nav class="nav-bar" id="home-primary-nav" aria-label="Menu">
                     <ul>
-                        <li><a href="./index.html" aria-current="page">Home</a></li>
-                        <li><a href="./npc.html">NPC generator</a></li>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./npc.html" aria-current="page">NPC generator</a></li>
                         <li><a href="./plotHook.html">Plot generator</a></li>
                         <li><a href="https://github.com/m-byszio/m-byszio.github.io" target="_blank" rel="noopener">About</a></li>
                     </ul>
@@ -38,45 +38,13 @@
             alt="manequins with adventure clothing surrounded by other adventuring gear">
         </figure>
         <figure class="page-art--right">            
-            <img 
+            <img class="img-dark" 
             src="./img/stories-cutout.png" 
             id="books" 
             alt="a pile of books, papers and old timey writing implements"> 
         </figure>
-        <main id="main" class="page-main">
-            <section class="welcome-box" aria-labelledby="welcome-text">
-                <h1 id="welcome-text">Welcome to Random Realms!</h1>
-            </section>
-            <section class="features" aria-label="Generators">
-               <article class="feature feature--npc" aria-labelledby="feat-npc-title">
-                
-                    <h2 id="feat-npc-title" class="visually-hidden">NPC Generator</h2>
-                    
-                    <div class="feature-animation-control">
-
-                        <a href="./npc.html" class="button button--npc">
-                            <span>Generate NPC</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-                <article class="feature feature--plot" aria-labelledby="feat-plot-title">
-
-                    <h2 id="feat-plot-title" class="visually-hidden">Plot generator</h2>
-                    
-                    <div class=" feature-animation-control">
-                        <a href="./plotHook.html" class="button button--plot">
-                            <span>Generate Plot</span>
-                        </a>
-
-                    </div>
-               
-                </article>
-            </section>
-
-            <section class="quotes" aria-labelledby="quotes-title">
+        <main id="main" class="feature-main">
+            <section class="quotes-generator" aria-labelledby="quotes-title">
                 <h2 id="quotes-title" class="visually-hidden">Inspirational quotes</h2>
 
                 <blockquote>
@@ -84,6 +52,39 @@
                 </blockquote>
 
             </section>
+            <section class="generator-features" aria-label="Generator">
+               <article class="feature feature--npc" aria-labelledby="feat-npc-title">
+                
+                    <h2 id="feat-npc-title" class="visually-hidden">NPC Generator</h2>
+                    
+                    <div class="feature-animation-control">
+
+                       <button class="button button--npc" onclick="generateNPC()">Generate NPC</button>
+
+                    </div>
+
+                </article>
+                <section 
+                    id="plot-output"
+                    class="output"
+                    aria-labelledby="npc-output-title"
+                    aria-live="polite"
+                    aria-busy="false">
+                <h3 id="npc-output-title" class="visually-hidden">Your Character</h3>
+                
+              <p class="empty-state result-stack-left">Click "Generate NPC" to get started</p>
+
+                <dl class="result-stack-left">
+
+                </dl>
+                <dl class="result-stack-right">
+
+                </dl>
+                
+                </section>
+            </section>
+
+
 
         </main>
         <footer class="page-footer">

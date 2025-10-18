@@ -1,0 +1,494 @@
+@layer reset, tokens, base, components;
+@layer reset {
+     *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body,
+  h1, h2, h3, h4, h5, h6,
+  p, figure, blockquote,
+  dl, dd {
+    margin: 0;
+  }
+
+  img, picture {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+@layer tokens {
+
+:root {
+    /*Whitespaces*/
+    --max-width: 1280px;
+    --gutter: clamp(8px, 2svh, 24px);
+    --section-gap: 48px;
+    --img-top-gap: 55px;
+    --bar-height: 60px;
+
+    /*color*/
+    --content-card: #EC7505;
+    --decorative-card: #942911;
+    --bars-color: #253d14;
+    --background: #050517;
+    --font-color: #000000;
+
+    /* Background image*/
+    --bg-image: url("../img/background.png");
+
+    /*font*/
+    --ff-content:   "Playwrite DE Grund",
+                    system-ui,
+                    -apple-system,
+                    "Segoe UI",
+                    Roboto,
+                    sans-serif;
+
+    --ff-decorative:    "Quintessential",
+                        Georgia, 
+                        "Times New Roman", 
+                        serif;
+
+    --fs-base: 18px;
+    --lh-base: 1.55;
+    --fs-h1: 2rem;
+    --lh-h1: 1.2;
+    --fs-desktop: 1rem;     
+    --fs-tablet: 0.875rem;
+    --fs-phone: 0.65rem;;
+    --fs-button: clamp(0.9rem, 0.8rem + .4vw, 1.6rem);
+
+    /*effects*/
+    --card-radius: 8px;
+    --card-box-shadow: 0 4px 8px rgba(0,0,0,0.25),
+                       inset 0 -3px 0 rgba(0,0,0,0.3);
+    
+    
+    /*layers*/
+    --z-bottom-img: 0;
+    --z-decoration: 1;
+    --z-top-img: 2;
+    --z-bars: 100;
+    --z-buttons: 1000;
+
+    /*breakpoint*/
+    --bp-tablet: 900px;
+    --bp-phone: 600px;
+
+
+    }
+}
+
+@layer base {
+    /*Defines smooth scaling across viewport sizes and breakpoints*/
+    html {
+    font-size: clamp(var(--fs-phone), 1vw + var(--fs-phone), var(--fs-desktop));
+    }
+    /*Sets up the core values of the page*/
+    body {
+        background: var(--background);
+        background-image: var(--bg-image);
+        font-size: var(--fs-base);
+        color: var(--font-color);
+        font-family: var(--ff-content);
+        line-height: var(--lh-base);
+        text-rendering: optimizeLegibility;
+    }
+    h1{
+        font-size: var(--fs-h1);
+        font-family: var(--ff-decorative);
+        line-height: var(--lh-h1);
+        margin:0;
+    }
+    p{
+        margin:0;
+    }
+    a {
+        text-decoration: none;
+        margin:0;
+        color: var(--font-color);
+    }
+    button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: var(--z-buttons);
+    }
+    /*Hides accessibility text*/
+    .visually-hidden{
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    :focus-visible {
+        outline: 2px solid var(--font-color);
+        outline-offset: 2px;
+    }
+    blockquote { 
+         margin: 0; 
+  }
+}
+@layer components {
+    /*Establishes the outer most grid*/
+    .home-grid-container {
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "art-left main art-right"
+        "footer footer footer";
+
+        grid-template-columns: 
+        minmax(140px, 1fr)      /*left*/
+        minmax(420px, 2fr)      /*center*/
+        minmax(120px, .88fr);     /*right*/
+                                
+        grid-template-rows: var(--bar-height) 1fr var(--bar-height);
+
+        overflow:hidden;
+        height: 100svh;
+    }
+    /*Defines the header values*/
+    .page-header {
+    /*defines layout*/
+        grid-area: header;
+        z-index: var(--z-bars);
+        position: sticky;
+        top: 0;
+        display: flex;
+        
+    /*defines look*/
+        justify-self: stretch;
+        background: var(--bars-color);
+        align-items: center;
+        block-size: var(--bar-height);
+    }
+    /*RR Logo in the Header*/
+    .logo {
+        inline-size: clamp(56px, 7vw, 70px);
+        block-size: auto;
+        margin-left: auto;
+        margin-right: var(--gutter);
+    }
+    .nav-group-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--gutter);
+        padding-block: calc(var(--gutter)* .3);
+        flex: 0 1 auto;
+        position: relative;
+    }
+    #chevron {
+        margin-left: var(--gutter);
+        inline-size: auto;
+        block-size: calc(var(--bar-height) * 0.3);
+    }  
+    .nav-bar a {
+        display: inline-block;
+        padding: .5rem .9rem;
+        border-radius: var(--card-radius);
+  }
+    .nav-bar a:hover,
+    .nav-bar a:focus-visible {
+        color: var(--content-card);
+        transform: translateY(-1px);
+        text-decoration: none;
+  }
+    .nav-bar a[aria-current="page"] {
+        color: var(--content-card);
+  }
+    .nav-bar ul {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: clamp(10px, 1.5vw, 22px);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+  }
+  /*Defines the footer values*/
+    .page-footer {
+        grid-area: footer;
+        display: grid;
+        z-index: var(--z-bars);
+        justify-self: stretch;
+        place-items: center;  
+        padding-block: 1rem;
+        block-size: var(--bar-height);
+        background: var(--bars-color);
+
+  }
+    .page-footer a {
+        color: var(--font-color);
+        text-decoration: none;
+        font-family: var(--ff-content);
+        font-size: 1.25rem;
+        letter-spacing: 0.03em;
+        transition: color .15s ease;
+  }
+    .page-footer a:hover,
+    .page-footer a:focus-visible {
+        color: var(--content-card);  
+  }
+  /*Define the values of the main compononents*/
+  /*content grid container*/
+    .page-main {
+        grid-area: main;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: auto auto;
+        row-gap: var(--gutter);
+        margin-block-start: 0;
+        min-block-size: 0;
+        align-self: stretch;
+        inline-size: min(100%, 70ch);
+  }
+    .welcome-box {
+        /*Controls the placing in the grid*/
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        /*Controls the look*/
+        margin-top: var(--gutter);
+        padding-block: var(--gutter);
+        justify-self: center; 
+        z-index: var(--z-decoration);  
+        max-inline-size: 45ch;
+        text-wrap: balance;
+        text-align: center;
+        color: var(--font-color);
+        background-color: var(--decorative-card);            
+        border-radius: var(--card-radius);
+        box-shadow: var(--card-box-shadow)
+  }
+    .features {
+        /*Controls the button placing in the grid*/
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        /*Controls the look*/
+        align-self: center;  
+        padding-block: clamp(6px, 3svh, var(--section-gap));
+        display: flex;
+        justify-content: center; 
+        gap: clamp(2rem, 8vw, 10rem); 
+        flex-wrap: wrap; 
+    }
+    .button--npc, .button--plot {
+        /*controls the buttons inside the features flexbox*/
+        display: inline-grid;
+        place-items: center;
+        padding-inline: 2rem;
+        padding-block: 0.75rem;
+        border-radius: var(--card-radius);
+        font-family: var(--ff-content);
+        font-size: var(--fs-button);
+        text-decoration: none;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        color: black;
+        background-color: var(--content-card);
+        box-shadow: var(--card-box-shadow);
+        transition: background-color .15s ease, box-shadow .15s ease, transform .1s ease;
+    }
+    
+    .button:hover, .button:focus-visible {
+        transform: translateY(-1px);
+        box-shadow:
+        0 6px 12px rgba(0,0,0,0.3),
+        inset 0 -2px 0 rgba(0,0,0,0.25);
+    }
+    .button:active {
+        transform: translateY(1px);
+        box-shadow:
+        0 2px 4px rgba(0,0,0,0.4),
+        inset 0 2px 0 rgba(0,0,0,0.4);
+  }
+    .quotes {
+        /*Controls the placing in the grid*/
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        /*Controls the look*/
+        z-index: var(--z-decoration);
+        place-self: center;
+        text-align: center;
+        padding-block: clamp(2rem, 6vw, 4rem);
+        text-wrap: nowrap;
+    }
+    .quotes blockquote, .quotes-generator blockquote {
+        background-color: var(--decorative-card);
+        color: var(--font-color);
+        border-radius: var(--card-radius);
+        padding: var(--gutter);
+        max-width: 69ch; 
+        box-shadow: var(--card-box-shadow);
+        width: clamp(20rem, 19rem + 1vw, 50rem);
+  }
+    .quotes p, .quotes-generator p {
+        font-family: var(--ff-decorative);
+        font-size: clamp(0.875rem, 0.5vw + 1.4rem, 2rem);
+        line-height: 1.4;
+        margin: 0;
+  }
+    /*IMAGES*/
+    /*controls the left image*/
+    .page-art--left {
+        grid-area: art-left;
+        z-index: var(--z-bottom-img);
+  }
+    /*controls the right image*/
+    .page-art--right {
+        grid-area: art-right;
+        justify-content: flex-end;
+    }
+    /*controls both images*/
+    .page-art--left, .page-art--right {
+        display: flex;
+        align-items: flex-end;
+        z-index: var(--z-top-img);
+  }
+    .page-art--left img, .page-art--right img {
+        display: block;
+        max-block-size: calc(100svh - 2 * var(--bar-height));
+        block-size: auto;
+        max-inline-size: 100%;     
+        inline-size: auto;
+        object-fit: contain;
+  }
+    .feature-main {
+        grid-area: main;
+        display: grid;
+        grid-template-areas: 
+        "quote"
+        "feature";
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr;
+        gap: var(--gutter);
+        margin: var(--gutter);
+  }
+   .generator-features{
+    grid-area: feature;
+    display: grid;
+    grid-template-areas: 
+    "button"
+    "output";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: var(--gutter);
+    margin-top: clamp(1.2rem, 1rem + 1.5vw, 3rem);
+   }
+   .feature--npc, .feature--plot {
+    grid-area: button;
+    width: clamp(1.2rem, 15rem + 1.5vw, 20rem);
+    height: auto;
+   }
+    .quotes-generator {
+        grid-area: quote;
+        z-index: var(--z-decoration);
+        place-self: center;
+        text-align: center;
+
+  }
+  .output {
+    container-type: inline-size;
+    grid-area: output;
+    display: grid;
+    grid-template-areas: 
+    "stack-left stack-right";
+    background: var(--content-card);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-box-shadow);
+    padding: var(--gutter);
+    max-height:475px;
+
+  }
+  .result-stack-left {
+    grid-area: stack-left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .result-stack-right {
+    display: flex;
+    grid-area: stack-right;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .img-dark {
+    opacity: 0.5;
+  }
+  .result-cat {
+    font-weight: 300;
+    font-size: clamp(0.85rem, 1cqw + 0.85rem, 1.25rem);
+    text-decoration: underline;
+
+  }
+  .result-cont {
+    font-weight: 200;
+    line-height: 1.4;
+    font-size: clamp(0.95rem, 1.4cqw + 0.35rem, 1.35rem);
+    padding-bottom: clamp(2px, 2vw, 10px);
+  }
+  .result-row {
+    background-color: rgba(148, 41, 17,0.2);
+    gap: var(--gutter);
+    border-radius: var(--card-radius);
+    margin: 0.4rem;
+    box-shadow: var(--card-box-shadow);
+    inline-size: 48cqw;
+  }
+  .empty-state {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+/*Breakpoint Tablet*/
+@media (max-width: 900px) {
+  :root { font-size: var(--fs-tablet); }
+}
+/*Breakpoint Phone*/
+@media (max-width: 680px) {
+  /*:root { font-size: var(--fs-phone); }*/
+  .home-grid-container {
+    grid-template-areas:  
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: auto;
+  }
+  .page-art--left,
+  .page-art--right {
+    display: none;
+  }
+  .nav-bar a {
+    font-size: calc(var(--fs-phone) * 1.3);
+  }
+}

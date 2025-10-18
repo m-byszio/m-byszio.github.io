@@ -348,7 +348,7 @@
         padding: var(--gutter);
         max-width: 69ch; 
         box-shadow: var(--card-box-shadow);
-        width: clamp(20rem, 19rem + 1vw, 50rem);
+        
   }
     .quotes p, .quotes-generator p {
         font-family: var(--ff-decorative);
@@ -491,4 +491,5 @@
   .nav-bar a {
     font-size: calc(var(--fs-phone) * 1.3);
   }
+
 }

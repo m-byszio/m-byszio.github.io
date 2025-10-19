@@ -1,20 +1,62 @@
-Welcome to the Random Realms Github page!
+# Random Realms
 
-This website was created as the end project for the "Introduction to Digital Services" course during 
-my Business Information Technology studies at Haaga-Helia.
+Welcome to the **Random Realms** GitHub page!
 
-Disclaimer: Code and Content were created in colaboration with ChatGPT. It was used as a tool to deepen my understanding
-of HTML, CSS and JavaScript and to create certain content for the website itself. Namely the images and some of the generator outputs.
-Any content was ultimately designed and curated by me.
+This website was created as the **end project** for the *“Introduction to Digital Services”* course during my **Business Information Technology** studies at **Haaga-Helia University of Applied Sciences**.
 
-How to use the generators
+---
 
-The intention behind the generators is to give you a place to start and feel inspired, 
-to fill in just enough blank space, so whats there still tells you something about the gaps.
-Especially the plot hook generator is not meant as a one click solution to creating a gripping plot but rather to practice your brain in combining aspects of a story,
-that you might've not thought about otherwise.
+## About This Project
 
-This website might be expanded from this state in the future but will then be found in a separate repository to preserve the state at the time of submission to the teacher of the course.
+> “Random Realms” is a creative web project combining **fantasy-themed design** and **interactive generators** for NPCs and plot hooks — built to explore and apply modern **HTML, CSS, and JavaScript** concepts.
 
-Any inquires can be send to m.byszio+github@gmail.com
+---
 
+## Tech Stack
+
+- **HTML5** – for the structure and content of the site  
+- **CSS3** – for styling, layout, and responsive design  
+  - Layered architecture: `reset`, `tokens`, `base`, `utilities`, `components`, `pages`  
+- **JavaScript (ES6)** – for the logic behind the NPC and Plot generators  
+- **Figma** – for prototyping and layout planning  
+- **Photopea / PowerPoint** – for image editing and transparency exports  
+- **Git & GitHub** – for version control and project hosting  
+
+---
+
+## Collaboration & Tools
+
+**Disclaimer:**  
+Code and content were created in collaboration with *ChatGPT*.  
+It was used as a tool to **deepen my understanding** of front-end development and to assist with **image creation** and **content generation** for the site.  
+
+All creative direction, design, and curation were done **personally by me**.
+
+---
+
+## How to Use the Generators
+
+The generators are meant as **creative prompts**, not complete answers.
+
+They are designed to:
+- Spark inspiration for your own stories or characters.  
+- Give you “just enough” to start imagining the spaces between the details.  
+- Encourage you to combine ideas in unexpected ways.  
+
+Especially the **Plot Hook Generator** is not a one-click story builder —  
+it’s a **tool to exercise your imagination**, helping you connect threads you might not have considered otherwise.
+
+---
+
+## Future Development
+
+This project represents the version submitted for the **course assignment**.  
+Future expansions or redesigns will appear in a **separate repository**  
+to preserve this version as it was at the time of submission.
+
+---
+
+## Contact
+
+For any inquiries, please reach out via email:  
+**[m.byszio+github@gmail.com](mailto:m.byszio+github@gmail.com)**

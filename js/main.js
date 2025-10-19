@@ -71,7 +71,7 @@ const moneyList = ["unfathomably rich", "rich", "doing well", "struggling", "poo
 const goalsList = ["Earn respect", "Find love", "Gain power", "Protect family", "Avenge wrong", "Seek knowledge", "Escape debt", "Prove worth", "Discover truth",
                          "Serve faith", "Restore honor", "Build fortune", "Survive threat", "Win fame", "Protect secret", "Reclaim homeland", "Cure illness", "Create masterpiece", "Redeem self", "Change the world"]
     
-const relationsList = ["Married","Single","Widowed", "Children: 1d10", "Siblings: 1d4","Mentor to a young apprentice", "Owes a debt to a noble", "Secretly in love","Member of a powerful family","Estranged from parents", "Has a secret afair"]
+const relationsList = ["Married","Single","Widowed", "Children: 1d10", "Siblings: 1d10","Mentor to a young apprentice", "Owes a debt to a noble", "Secretly in love","Member of a powerful family","Estranged from parents", "Has a secret afair"]
     
 const appearanceList = [  "Neat hair","Messy hair","Piercing eyes","Scarred face","Missing tooth","Tattooed arms","Rough hands","Fine clothes",
                                 "Torn cloak","Gaunt face","Bright eyes","Crooked nose","Limping gait","Burned skin","Glowing eyes","Pale skin","Golden hair","Filed horns","Metal arm","Hidden face"]
@@ -418,6 +418,7 @@ function generatePlot(){
 function picker(arr){
     return arr[Math.floor(Math.random() * arr.length)]
 }
+
 
 
 

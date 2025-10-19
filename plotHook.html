@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Quintessential&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js" onload="pickStoryQuote(); generatePlot();"  defer></script>
 </head>
 <body>
 
@@ -48,7 +48,7 @@
                 <h2 id="quotes-title" class="visually-hidden">Inspirational quotes</h2>
 
                 <blockquote>
-                    <p id="quote-output">Every star is a story that refused to be forgotten.</p>
+                    <p id="plot-quote-output">Every star is a story that refused to be forgotten.</p>
                 </blockquote>
 
             </section>
@@ -72,25 +72,13 @@
                     aria-busy="false">
                 <h3 id="plot-output-title" class="visually-hidden">Your Character</h3>
                 
-                <p class="empty-state">Click "Generate Plot" to get started</p>
+                <!--<p class="empty-state">Click "Generate Plot" to get started</p>-->
 
-                <dl class="result">
-                    <div class="result-row">
-                        <dt class="result-cat">Placeholder Category</dt>
-                        <dd class="result-cont">Placeholder Content</dd>
-                    </div>
-                    <div class="result-row">
-                        <dt class="result-cat">Placeholder Category</dt>
-                        <dd class="result-cont">Placeholder Content</dd>
-                    </div>
-                    <div class="result-row">
-                        <dt class="result-cat">Placeholder Category</dt>
-                        <dd class="result-cont">Placeholder Content</dd>
-                    </div>
-                    <div class="result-row">
-                        <dt class="result-cat">Placeholder Category</dt>
-                        <dd class="result-cont">Placeholder Content</dd>
-                    </div>
+                <dl class="result-stack-left">
+
+                </dl>
+                <dl class="result-stack-right">
+
                 </dl>
                 
                 </section>

@@ -336,21 +336,27 @@ const outcomeList = [
   "Children are born without the old curse.",
   "The world feels lighter, as if it can breathe again."
 ];
+//Functions
+//Picks a quote from the character quotes for the NPC page and writes to the quotes box
 function pickNPCQuote() {
     quote = picker(npcInspiration);
     document.getElementById("npc-quote-output").innerHTML = quote;
-
 }
+
+//Picks a quote from the story quotes for the Plot page and writes to the quotes box
 function pickStoryQuote() {
     quote = picker(storyInspiration);
     document.getElementById("plot-quote-output").innerHTML = quote;
 }
+
+//Picks a quote from both quotes arrays for the Main page and writes to the quotes box
 function pickMainQuote() {
     let list = picker(inspirationCombined);
     let quote = picker(list);
      document.getElementById("main-quote-output").innerHTML = quote;
 }
 
+//Generates the different npc attributes and writes them to the output box
 function generateNPC() {
     console.log("active")
     const age = Math.floor(Math.random() * 70 + 20);
@@ -380,7 +386,7 @@ function generateNPC() {
     <div class="result-row"><dt class="result-cat">Origin</dt><dd class="result-cont">${origins}</dd></div>
   `;
 }
-
+//Generates the different plot attributes and writes them to the output box
 function generatePlot(){
     let drive = picker(driveList);
     let catalyst = picker(catalystList);
@@ -408,11 +414,11 @@ function generatePlot(){
     <div class="result-row"><dt class="result-cat">Setting</dt><dd class="result-cont">${setting}</dd></div>
   `;
 }
-
+//Picks a random item out of a specified array
 function picker(arr){
     return arr[Math.floor(Math.random() * arr.length)]
 }
 
 
-// page animations live here
+
 

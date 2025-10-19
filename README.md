@@ -15,8 +15,7 @@ This website was created as the **end project** for the *“Introduction to Digi
 ## Tech Stack
 
 - **HTML5** – for the structure and content of the site  
-- **CSS3** – for styling, layout, and responsive design  
-  - Layered architecture: `reset`, `tokens`, `base`, `utilities`, `components`, `pages`  
+- **CSS3** – for styling, layout, and responsive design   
 - **JavaScript (ES6)** – for the logic behind the NPC and Plot generators  
 - **Figma** – for prototyping and layout planning  
 - **Photopea / PowerPoint** – for image editing and transparency exports  

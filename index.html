@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Quintessential&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js" onload="pickMainQuote()" defer></script>
 </head>
 <body>
 
@@ -54,7 +54,7 @@
                     
                     <div class="feature-animation-control">
 
-                        <a href="./npc.html" class="button button--npc">
+                        <a href="./npc.html" class="button button--npc-main">
                             <span>Generate NPC</span>
                         </a>
 
@@ -67,8 +67,8 @@
                     <h2 id="feat-plot-title" class="visually-hidden">Plot generator</h2>
                     
                     <div class=" feature-animation-control">
-                        <a href="./plotHook.html" class="button button--plot">
-                            <span>Generate Plot</span>
+                        <a href="./plotHook.html" class="button button--plot-main">
+                            Generate Plot
                         </a>
 
                     </div>
@@ -80,7 +80,7 @@
                 <h2 id="quotes-title" class="visually-hidden">Inspirational quotes</h2>
 
                 <blockquote>
-                    <p id="quote-output">Every star is a story that refused to be forgotten.</p>
+                    <p id="main-quote-output">Every star is a story that refused to be forgotten.</p>
                 </blockquote>
 
             </section>

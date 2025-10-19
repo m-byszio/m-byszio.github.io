@@ -298,10 +298,30 @@
         gap: clamp(2rem, 8vw, 10rem); 
         flex-wrap: wrap; 
     }
+    .feature--npc,
+.feature--plot {
+  display: grid;
+  place-items: center;
+}
     .button--npc, .button--plot {
         /*controls the buttons inside the features flexbox*/
         display: inline-grid;
         place-items: center;
+        padding-inline: 2rem;
+        padding-block: 0.75rem;
+        border-radius: var(--card-radius);
+        font-family: var(--ff-content);
+        font-size: var(--fs-button);
+        text-decoration: none;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        color: black;
+        background-color: var(--content-card);
+        box-shadow: var(--card-box-shadow);
+        transition: background-color .15s ease, box-shadow .15s ease, transform .1s ease;
+    }
+    .button--npc-main, .button--plot-main {
+        display: inline-grid;
         padding-inline: 2rem;
         padding-block: 0.75rem;
         border-radius: var(--card-radius);
@@ -339,7 +359,7 @@
         place-self: center;
         text-align: center;
         padding-block: clamp(2rem, 6vw, 4rem);
-        text-wrap: nowrap;
+        
     }
     .quotes blockquote, .quotes-generator blockquote {
         background-color: var(--decorative-card);
@@ -348,7 +368,7 @@
         padding: var(--gutter);
         max-width: 69ch; 
         box-shadow: var(--card-box-shadow);
-        
+
   }
     .quotes p, .quotes-generator p {
         font-family: var(--ff-decorative);
@@ -491,5 +511,4 @@
   .nav-bar a {
     font-size: calc(var(--fs-phone) * 1.3);
   }
-
 }

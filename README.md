@@ -8,7 +8,7 @@ This website was created as the **end project** for the *“Introduction to Digi
 
 ## About This Project
 
-> “Random Realms” is a creative web project combining **fantasy-themed design** and **interactive generators** for NPCs and plot hooks — built to explore and apply modern **HTML, CSS, and JavaScript** concepts.
+“Random Realms” is a creative web project combining **fantasy-themed design** and **interactive generators** for NPCs and plot hooks — built to explore and apply modern **HTML, CSS, and JavaScript** concepts.
 
 ---
 
@@ -23,9 +23,8 @@ This website was created as the **end project** for the *“Introduction to Digi
 
 ---
 
-## Collaboration & Tools
 
-**Disclaimer:**  
+## Disclaimer: 
 Code and content were created in collaboration with *ChatGPT*.  
 It was used as a tool to **deepen my understanding** of front-end development and to assist with **image creation** and **content generation** for the site.  
 
